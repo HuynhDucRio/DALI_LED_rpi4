@@ -1,0 +1,15 @@
+KERN_SRC:= /home/duc/Desktop/kernel/linux
+PWD   := $(shell pwd)
+obj-m := DALI.o 
+all:
+	make -C $(KERN_SRC) \
+	ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \
+	M=$(PWD) modules
+clean:
+	make -C $(KERN_SRC) \
+	ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- \
+	M=$(PWD) clean
+scp:
+	scp *.ko pi@raspberrypi.local:/home/pi/DALI_int
+ssh:
+	ssh -X pi@raspberrypi.local
