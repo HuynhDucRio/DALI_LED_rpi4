@@ -33,7 +33,24 @@ This project uses **ESP32 as a DALI LED driver**, receiving commands from **Rasp
    git clone https://github.com/HuynhDucRio/DALI_LED_rpi4.git
    cd DALI_LED_rpi4
    ```
-2. **Control LEDs via User-Space Program**
+2. **Build and Install the Kernel Module**
+   ```bash
+   make
+   sudo insmod dali_driver.ko
+   ```
+3. **Verify Driver is Loaded**
+   ```bash
+   lsmod | grep dali
+   ```
+4. **Remove Kernel Module (if needed)**
+   ```bash
+   sudo rmmod dali_driver
+   ```
+5. **Clean Build Files**
+   ```bash
+   make clean
+   ```
+6. **Control LEDs via User-Space Program**
    - **Using C Program (`RPi_DALI_app.c`)**:
      ```bash
      gcc RPi_DALI_app.c -o dali_app
@@ -59,7 +76,7 @@ This project uses **ESP32 as a DALI LED driver**, receiving commands from **Rasp
      6. Open **Serial Monitor** to check communication logs.
      7. ESP32 listens for signals from Raspberry Pi and executes LED control commands.
 
-3. **Monitor Logs on Raspberry Pi**
+7. **Monitor Logs on Raspberry Pi**
    ```bash
    dmesg | tail -n 20
    ```
