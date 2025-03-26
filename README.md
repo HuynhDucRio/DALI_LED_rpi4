@@ -17,7 +17,7 @@ This project uses **ESP32 as a DALI LED driver**, receiving commands from **Rasp
 - **Communication**: DALI Protocol, UART/SPI (for Raspberry Pi to ESP32 communication).
 
 ## 📷 Screenshots
-![System Diagram](![image](https://github.com/user-attachments/assets/dca17d6d-386c-4a60-9bab-69119b5251b0)
+(![image](https://github.com/user-attachments/assets/dca17d6d-386c-4a60-9bab-69119b5251b0)
 *System architecture showing Raspberry Pi sending commands to ESP32 for LED control*
 
 ## 🚀 Getting Started
